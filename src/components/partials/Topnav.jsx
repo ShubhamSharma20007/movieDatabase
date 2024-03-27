@@ -5,7 +5,6 @@ import axios from "../../utils/axios";
 const Topnav = () => {
   const [query, setquery] = useState("");
   const [search, setSearch] = useState(null);
-  console.log(search);
   const getSearch = async (query) => {
     try {
       const response = await axios.get(`/?apikey=13194d45&s=${query}`);
@@ -22,7 +21,7 @@ const Topnav = () => {
 
   return (
     <>
-      <div className="w-full h-[10vh] relative flex justify-start ml-[20%] items-center">
+      <div className="w-full h-[10vh] relative flex justify-start pl-[20%] items-center">
         <i class="ri-search-line text-xl text-zinc-400"></i>
         <input
           type="text"
@@ -48,11 +47,12 @@ const Topnav = () => {
                   className="p-4 hover:text-black hover:bg-zinc-300 duraion-300 font-semibold text-zinc-600 gap-5  w-[100%] flex justify-start items-center border-b-2 border-zinc-100"
                 >
                   <img
-                    src={item.Posterw}
+                    src={item.Poster}
                     onError={(e) => {
                       e.target.src =
                         "https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png";
                     }}
+                   
                     width={50}
                     height={50}
                     className="object-cover rounded-md"
